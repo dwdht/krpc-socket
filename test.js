@@ -2,7 +2,7 @@ var tape = require('tape')
 var rpc = require('./')
 var dgram = require('dgram')
 
-tape('query + response', function (t) {
+tape('dWeb DHT KRPC Socket Tests: Query + Response', function (t) {
   var server = rpc()
   var queried = false
 
@@ -31,7 +31,7 @@ tape('query + response', function (t) {
   })
 })
 
-tape('parallel query', function (t) {
+tape('dWeb DHT KRPC Socket Tests: Parallel Query', function (t) {
   var server = rpc()
 
   server.on('query', function (query, peer) {
@@ -63,7 +63,7 @@ tape('parallel query', function (t) {
   })
 })
 
-tape('query + error', function (t) {
+tape('dWeb DHT KRPC Socket Tests: Query + Error', function (t) {
   var server = rpc()
 
   server.on('query', function (query, peer) {
@@ -83,7 +83,7 @@ tape('query + error', function (t) {
   })
 })
 
-tape('timeout', function (t) {
+tape('dWeb DHT KRPC Socket Tests: Timeout', function (t) {
   var socket = rpc({timeout: 100})
 
   socket.query({host: 'example.com', port: 12345}, {q: 'timeout'}, function (err) {
@@ -94,7 +94,7 @@ tape('timeout', function (t) {
   })
 })
 
-tape('do not crash on empty string', function (t) {
+tape('dWeb DHT KRPC Socket Tests: Do Not Crash An Empty String', function (t) {
   if (/^v0\.10\./.test(process.version)) {
     // Sending a zero length udp message does not work on Node 0.10
     t.pass('skipping test on Node 0.10')
