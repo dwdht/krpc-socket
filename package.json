@@ -1,6 +1,6 @@
 {
   "name": "@dwdht/krpc-socket",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "dWeb Library Implementation For K-RPC's Network Layer For Use With BitTorrent's DHT.",
   "contributors": [
     "Jared Rice Sr. <jared@dwebs.io>",
